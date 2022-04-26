@@ -17,7 +17,7 @@ public class Category {
     private String categoryName;
 
     @ManyToOne
-    @JoinColumn(name = "categoryId")
+    @JoinColumn(name = "bookId")
     private Book book;
 
 }
