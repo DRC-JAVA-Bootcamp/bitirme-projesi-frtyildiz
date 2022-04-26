@@ -1,7 +1,6 @@
 package com.firatyildiz.LibraryManagementSystem.entity;
 
 import lombok.Data;
-import lombok.Getter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -10,6 +9,8 @@ import java.time.LocalDate;
 @Table(name = "Book")
 @Data
 public class Book {
+
+    // localhost:8098/h2-console
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,9 +24,6 @@ public class Book {
 
     @Column(name = "Author")
     private String author;
-
-    @Column(name = "Category")
-    private String category;
 
     @Column(name = "Publisher")
     private String publisher;
