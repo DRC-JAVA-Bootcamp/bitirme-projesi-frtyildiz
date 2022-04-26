@@ -20,4 +20,5 @@ public class Category {
     @JoinColumn(name = "bookId")
     private Book book;
 
+
 }
