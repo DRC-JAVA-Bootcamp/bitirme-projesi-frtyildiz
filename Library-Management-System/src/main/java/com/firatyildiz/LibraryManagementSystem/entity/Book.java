@@ -19,28 +19,28 @@ public class Book {
     @Column(name = "ISBN")
     private long isbn;
 
-    @Column(name = "Title")
+    @Column(name = "Title", length = 75)
     private String title;
 
-    @Column(name = "Author")
+    @Column(name = "Author", length = 75)
     private String author;
 
-    @Column(name = "Publisher")
+    @Column(name = "Publisher", length = 75)
     private String publisher;
 
-    @Column(name = "Language")
+    @Column(name = "Language", length = 25)
     private String language;
 
     @Column(name = "Page")
     private int page;
 
-    @Column(name = "Explanation")
+    @Column(name = "Explanation", length = 1000)
     private String explanation;
 
     @Column(name = "PublicationDate")
     private LocalDate publicationDate;
 
-    @Column(name = "Format")
+    @Column(name = "Format", length = 25)
     private String format;
 
 }
