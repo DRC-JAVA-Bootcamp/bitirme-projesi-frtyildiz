@@ -19,7 +19,6 @@ public class AuthorService {
     @Autowired
     ModelMapper modelMapper;
 
-
     public String saveAuthor(SaveAuthorRequestDto saveAuthorRequestDto)
     {
         Author author = modelMapper.map(saveAuthorRequestDto, Author.class);
@@ -51,7 +50,10 @@ public class AuthorService {
         return "Değişiklikler Başarıyla Gerçekleştirildi.";
     }
 
-
-
-
+    public String deleteAuthorById(Integer authorId)
+    {
+        Author author = authorRepository.findById(authorId).get();
+        authorRepository.delete(author);
+        return "Silme İşlemi Başarıyla Gerçekleştirildi.";
+    }
 }

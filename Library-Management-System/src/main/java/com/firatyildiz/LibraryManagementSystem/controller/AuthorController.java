@@ -27,8 +27,7 @@ public class AuthorController {
             "lastname":"Fowles"
          */
     }
-
-
+    
     @GetMapping("/findAuthorById")
     public ResponseEntity<Author> findAuthorById(@RequestParam Integer authorId)
     {
@@ -43,7 +42,12 @@ public class AuthorController {
         return new ResponseEntity<>(updateAuthorDescription, HttpStatus.OK);
     }
 
-
+    @DeleteMapping("/deleteAuthor")
+    public ResponseEntity<String> deleteAuthorById(@RequestParam Integer authorId)
+    {
+        String deleteAuthorDescription = authorService.deleteAuthorById(authorId);
+        return new ResponseEntity<>(deleteAuthorDescription, HttpStatus.OK);
+    }
 
 
 }
