@@ -2,12 +2,15 @@ package com.firatyildiz.LibraryManagementSystem.controller;
 
 import com.firatyildiz.LibraryManagementSystem.dto.requestDto.SaveAuthorRequestDto;
 import com.firatyildiz.LibraryManagementSystem.dto.requestDto.UpdateAuthorRequestDto;
+import com.firatyildiz.LibraryManagementSystem.dto.responseDto.AuthorResponseDto;
 import com.firatyildiz.LibraryManagementSystem.entity.Author;
 import com.firatyildiz.LibraryManagementSystem.service.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/author")
@@ -33,6 +36,13 @@ public class AuthorController {
     {
         Author author = authorService.findAuthor(authorId);
         return new ResponseEntity<>(author, HttpStatus.OK);
+    }
+
+    @GetMapping("findAllAuthor")
+    public ResponseEntity<List<AuthorResponseDto>> findAllAuthor()
+    {
+        List<AuthorResponseDto> authorResponseDtos = authorService.findAllAuthor();
+        return new ResponseEntity<>(authorResponseDtos, HttpStatus.OK);
     }
 
     @PostMapping("/updateAuthor")
