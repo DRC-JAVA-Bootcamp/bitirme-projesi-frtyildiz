@@ -2,6 +2,7 @@ package com.firatyildiz.LibraryManagementSystem.controller;
 
 import com.firatyildiz.LibraryManagementSystem.dto.requestDto.SaveBookRequestDto;
 import com.firatyildiz.LibraryManagementSystem.dto.responseDto.BookResponseDto;
+import com.firatyildiz.LibraryManagementSystem.entity.Book;
 import com.firatyildiz.LibraryManagementSystem.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -44,7 +45,12 @@ public class BookController {
         return new ResponseEntity<>(bookResponseDtos, HttpStatus.OK);
     }
 
-
+    @GetMapping("/findBookById")
+    public ResponseEntity<Book> findBookById(@RequestParam Integer bookId)
+    {
+        Book book = bookService.findBook(bookId);
+        return new ResponseEntity<>(book, HttpStatus.OK);
+    }
 
 
 }

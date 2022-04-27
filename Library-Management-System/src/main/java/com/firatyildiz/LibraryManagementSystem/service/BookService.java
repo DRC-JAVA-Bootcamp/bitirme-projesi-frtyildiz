@@ -61,4 +61,9 @@ public class BookService {
 
         return bookResponseDtos;
     }
+
+    public Book findBook(Integer bookId)
+    {
+        return bookRepository.findById(bookId).get();
+    }
 }
