@@ -2,6 +2,8 @@ package com.firatyildiz.LibraryManagementSystem.controller;
 
 import com.firatyildiz.LibraryManagementSystem.dto.requestDto.SaveAuthorRequestDto;
 import com.firatyildiz.LibraryManagementSystem.dto.requestDto.SaveCategoryRequestDto;
+import com.firatyildiz.LibraryManagementSystem.dto.requestDto.UpdateAuthorRequestDto;
+import com.firatyildiz.LibraryManagementSystem.dto.requestDto.UpdateCategoryRequestDto;
 import com.firatyildiz.LibraryManagementSystem.entity.Author;
 import com.firatyildiz.LibraryManagementSystem.entity.Category;
 import com.firatyildiz.LibraryManagementSystem.service.CategoryService;
@@ -34,4 +36,13 @@ public class CategoryController {
         Category category = categoryService.findCategory(categoryId);
         return new ResponseEntity<>(category, HttpStatus.OK);
     }
+
+    @PostMapping("/updateCategory")
+    public ResponseEntity<String> updateCategory(@RequestBody UpdateCategoryRequestDto updateCategoryRequestDto)
+    {
+        String updateCategoryDescription = categoryService.updateCategory(updateCategoryRequestDto);
+        return new ResponseEntity<>(updateCategoryDescription, HttpStatus.OK);
+    }
+
+
 }

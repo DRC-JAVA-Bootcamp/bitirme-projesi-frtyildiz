@@ -27,7 +27,7 @@ public class AuthorController {
             "lastname":"Fowles"
          */
     }
-    
+
     @GetMapping("/findAuthorById")
     public ResponseEntity<Author> findAuthorById(@RequestParam Integer authorId)
     {
