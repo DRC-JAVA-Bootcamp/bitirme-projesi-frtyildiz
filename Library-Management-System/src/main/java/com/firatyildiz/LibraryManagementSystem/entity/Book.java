@@ -28,6 +28,10 @@ public class Book {
     @Column(name = "Publisher", length = 75)
     private String publisher;
 
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinTable(name = "categoryBook")
+    private Category category;
+
     @Column(name = "Language", length = 25)
     private String language;
 

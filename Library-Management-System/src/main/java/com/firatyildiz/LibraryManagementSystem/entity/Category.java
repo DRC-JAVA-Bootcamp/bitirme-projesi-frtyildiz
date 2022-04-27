@@ -3,9 +3,11 @@ package com.firatyildiz.LibraryManagementSystem.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-@Table
+@Table(name = "Category")
 @Data
 public class Category {
 
@@ -16,9 +18,9 @@ public class Category {
     @Column(name = "categoryName")
     private String categoryName;
 
-    @ManyToOne
-    @JoinColumn(name = "bookId")
-    private Book book;
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Book> books = new ArrayList<>();
+
 
 
 }
