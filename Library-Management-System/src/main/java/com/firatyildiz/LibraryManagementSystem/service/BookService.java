@@ -2,6 +2,7 @@ package com.firatyildiz.LibraryManagementSystem.service;
 
 import com.firatyildiz.LibraryManagementSystem.dto.requestDto.SaveBookRequestDto;
 import com.firatyildiz.LibraryManagementSystem.dto.responseDto.BookResponseDto;
+import com.firatyildiz.LibraryManagementSystem.entity.Author;
 import com.firatyildiz.LibraryManagementSystem.entity.Book;
 import com.firatyildiz.LibraryManagementSystem.repository.BookRepository;
 import org.modelmapper.ModelMapper;
@@ -21,11 +22,21 @@ public class BookService {
     @Autowired
     ModelMapper modelMapper;
 
+    @Autowired
+    AuthorService authorService;
+
     public String saveBook(SaveBookRequestDto saveBookRequestDto)
     {
         Book book = modelMapper.map(saveBookRequestDto, Book.class);
 
         book = bookRepository.save(book);
+
+        List<Author> authors = new ArrayList();
+        for (Integer authorId: saveBookRequestDto.getAuthorId()) {
+            Author author = authorService.findAuthor(authorId);
+            authors.add(author);
+        }
+        book.setAuthor(authors);
 
         return book.getTitle() + " Kitabı Sisteme Başarıyla Eklendi.";
 //        return book.getAuthor() + " Yazarına Ait " + book.getTitle() + " Kitabı Sisteme Başarıyla Eklendi.";
@@ -40,7 +51,6 @@ public class BookService {
         for (Book book : books)
         {
             BookResponseDto bookResponseDto = modelMapper.map(book, BookResponseDto.class);
-
             bookResponseDtos.add(bookResponseDto);
         }
 

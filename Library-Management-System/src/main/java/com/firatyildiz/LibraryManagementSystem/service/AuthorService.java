@@ -7,6 +7,8 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class AuthorService {
 
@@ -25,4 +27,20 @@ public class AuthorService {
 
         return author.getName() + " " + author.getLastname() + " İsimli Yazar Başarıyla Oluşturuldu.";
     }
+
+    public Author findAuthor(Integer authorId)
+    {
+        return authorRepository.findById(authorId).get();
+    }
+
+    /*
+    public String saveAuthorToBookByIds(int bookId, int authorId) {
+
+        Book book = new Book();
+        Author author = new Author();
+
+        Author authorRequest = author.getId(authorId);
+    }
+
+     */
 }

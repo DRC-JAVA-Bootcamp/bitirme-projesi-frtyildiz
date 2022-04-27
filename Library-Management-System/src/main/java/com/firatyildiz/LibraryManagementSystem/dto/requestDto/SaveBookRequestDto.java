@@ -3,6 +3,7 @@ package com.firatyildiz.LibraryManagementSystem.dto.requestDto;
 import lombok.Data;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Data
 public class SaveBookRequestDto {
@@ -11,7 +12,7 @@ public class SaveBookRequestDto {
 
     private String title;
 
-//    private String author;
+    private List<Integer> authorId;
 
     private String publisher;
 

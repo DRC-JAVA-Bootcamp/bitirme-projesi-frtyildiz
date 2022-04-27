@@ -4,6 +4,8 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "Book")
@@ -25,12 +27,12 @@ public class Book {
     @Column(name = "Publisher", length = 75)
     private String publisher;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinTable(name = "AuthorBook", joinColumns = @JoinColumn(name = "book_id"))
-    private Author author;
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinTable(name = "bookAuthor", joinColumns = @JoinColumn(name = "book_id"))
+    private List<Author> author = new ArrayList<>();
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinTable(name = "categoryBook",joinColumns = @JoinColumn(name = "book_id"))
+    @JoinColumn(name = "category_id")
     private Category category;
 
     @Column(name = "Language", length = 25)
