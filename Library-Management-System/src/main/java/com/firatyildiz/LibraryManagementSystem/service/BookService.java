@@ -27,7 +27,8 @@ public class BookService {
 
         book = bookRepository.save(book);
 
-        return book.getAuthor() + " Yazarına Ait " + book.getTitle() + " Kitabı Sisteme Başarıyla Eklendi.";
+        return book.getTitle() + " Kitabı Sisteme Başarıyla Eklendi.";
+//        return book.getAuthor() + " Yazarına Ait " + book.getTitle() + " Kitabı Sisteme Başarıyla Eklendi.";
     }
 
     public List<BookResponseDto> findAllBook()
