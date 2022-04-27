@@ -1,10 +1,7 @@
 package com.firatyildiz.LibraryManagementSystem.controller;
 
-import com.firatyildiz.LibraryManagementSystem.dto.requestDto.SaveAuthorRequestDto;
 import com.firatyildiz.LibraryManagementSystem.dto.requestDto.SaveCategoryRequestDto;
-import com.firatyildiz.LibraryManagementSystem.dto.requestDto.UpdateAuthorRequestDto;
 import com.firatyildiz.LibraryManagementSystem.dto.requestDto.UpdateCategoryRequestDto;
-import com.firatyildiz.LibraryManagementSystem.entity.Author;
 import com.firatyildiz.LibraryManagementSystem.entity.Category;
 import com.firatyildiz.LibraryManagementSystem.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,5 +41,11 @@ public class CategoryController {
         return new ResponseEntity<>(updateCategoryDescription, HttpStatus.OK);
     }
 
+    @DeleteMapping("/deleteCategory")
+    public ResponseEntity<String> deleteCategoryById(@RequestParam Integer categoryId)
+    {
+        String deleteCategoryDescription = categoryService.deleteCategoryById(categoryId);
+        return new ResponseEntity<>(deleteCategoryDescription, HttpStatus.OK);
+    }
 
 }

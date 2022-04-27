@@ -48,4 +48,10 @@ public class CategoryService {
     }
 
 
+    public String deleteCategoryById(Integer categoryId)
+    {
+        Category category = categoryRepository.findById(categoryId).get();
+        categoryRepository.delete(category);
+        return "Silme İşlemi Başarıyla Gerçekleştirildi.";
+    }
 }
