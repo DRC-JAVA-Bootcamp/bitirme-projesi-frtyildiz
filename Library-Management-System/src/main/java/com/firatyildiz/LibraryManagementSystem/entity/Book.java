@@ -22,11 +22,6 @@ public class Book {
     @Column(name = "Title", length = 75)
     private String title;
 
-    /*
-    @Column(name = "Author", length = 75)
-    private String author;
-     */
-
     @Column(name = "Publisher", length = 75)
     private String publisher;
 
