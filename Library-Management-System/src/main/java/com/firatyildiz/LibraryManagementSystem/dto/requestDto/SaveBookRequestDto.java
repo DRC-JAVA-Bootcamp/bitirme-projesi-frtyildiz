@@ -25,4 +25,6 @@ public class SaveBookRequestDto {
     private LocalDate publicationDate;
 
     private String format;
+
+    private int categoryId;
 }

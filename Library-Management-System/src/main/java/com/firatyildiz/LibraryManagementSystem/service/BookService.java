@@ -4,6 +4,7 @@ import com.firatyildiz.LibraryManagementSystem.dto.requestDto.SaveBookRequestDto
 import com.firatyildiz.LibraryManagementSystem.dto.responseDto.BookResponseDto;
 import com.firatyildiz.LibraryManagementSystem.entity.Author;
 import com.firatyildiz.LibraryManagementSystem.entity.Book;
+import com.firatyildiz.LibraryManagementSystem.entity.Category;
 import com.firatyildiz.LibraryManagementSystem.repository.BookRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,18 +26,22 @@ public class BookService {
     @Autowired
     AuthorService authorService;
 
+    @Autowired
+    CategoryService categoryService;
+
     public String saveBook(SaveBookRequestDto saveBookRequestDto)
     {
         Book book = modelMapper.map(saveBookRequestDto, Book.class);
-
-        book = bookRepository.save(book);
-
         List<Author> authors = new ArrayList();
         for (Integer authorId: saveBookRequestDto.getAuthorId()) {
             Author author = authorService.findAuthor(authorId);
             authors.add(author);
         }
-        book.setAuthor(authors);
+        book.setAuthors(authors);
+
+        Category category = categoryService.findCategory(saveBookRequestDto.getCategoryId());
+        book.setCategory(category);
+        book = bookRepository.save(book);
 
         return book.getTitle() + " Kitabı Sisteme Başarıyla Eklendi.";
 //        return book.getAuthor() + " Yazarına Ait " + book.getTitle() + " Kitabı Sisteme Başarıyla Eklendi.";

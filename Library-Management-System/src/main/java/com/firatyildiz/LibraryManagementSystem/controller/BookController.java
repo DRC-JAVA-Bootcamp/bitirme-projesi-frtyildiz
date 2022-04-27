@@ -26,13 +26,14 @@ public class BookController {
         /*
             "isbn":9789755393735,
             "title":"Büyücü",
-            "author":"John Fowles",
+            "authorId":[2],
             "publisher":"Ayrıntı Yayınları",
             "language":"Türkçe",
             "page":688,
             "explanation":"Çağının yarı-entelektüel bunalımlarını geçirmekte olan, Oxford mezunu Nicholas Urfe, İngiltere’nin kasvetinden ve aşktan kaçmak için ücra bir Yunan adasına İngilizce öğretmeni olarak gider. Tek başına sıkıntılı günler geçirdiği, şair olduğuna dair hayallerinin de suya düştüğü bir sırada, gizemli milyoner Conchis ile tanışır...",
             "publicationDate":"2021-11-11",
-            "format":"Ciltli"
+            "format":"Ciltli",
+            "categoryId":1
          */
     }
 

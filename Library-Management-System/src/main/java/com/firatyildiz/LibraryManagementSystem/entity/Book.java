@@ -29,7 +29,7 @@ public class Book {
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinTable(name = "bookAuthor", joinColumns = @JoinColumn(name = "book_id"))
-    private List<Author> author = new ArrayList<>();
+    private List<Author> authors = new ArrayList<>();
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")

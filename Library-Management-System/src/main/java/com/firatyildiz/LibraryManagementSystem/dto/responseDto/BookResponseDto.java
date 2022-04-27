@@ -11,7 +11,7 @@ public class BookResponseDto {
 
     private String title;
 
-//    private String author;
+    private int authorId;
 
     private String publisher;
 
@@ -24,5 +24,7 @@ public class BookResponseDto {
     private LocalDate publicationDate;
 
     private String format;
+
+    private int categoryId;
 
 }

@@ -24,7 +24,7 @@ public class CategoryController {
         return new ResponseEntity<>(categorySaveDescription, HttpStatus.OK);
 
         /*
-            "categoryName":"Modern Klasikler",
+            "categoryName":"Modern Klasikler"
          */
     }
 
