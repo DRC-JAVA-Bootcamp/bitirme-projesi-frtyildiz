@@ -29,11 +29,11 @@ public class BookService {
     @Autowired
     CategoryService categoryService;
 
-    public String saveBook(SaveBookRequestDto saveBookRequestDto)
-    {
+
+    public String saveBook(SaveBookRequestDto saveBookRequestDto) {
         Book book = modelMapper.map(saveBookRequestDto, Book.class);
         List<Author> authors = new ArrayList();
-        for (Integer authorId: saveBookRequestDto.getAuthorId()) {
+        for (Integer authorId : saveBookRequestDto.getAuthorId()) {
             Author author = authorService.findAuthor(authorId);
             authors.add(author);
         }
@@ -47,14 +47,12 @@ public class BookService {
 //        return book.getAuthor() + " Yazarına Ait " + book.getTitle() + " Kitabı Sisteme Başarıyla Eklendi.";
     }
 
-    public List<BookResponseDto> findAllBook()
-    {
+    public List<BookResponseDto> findAllBook() {
         Iterable<Book> books = bookRepository.findAll();
 
         List<BookResponseDto> bookResponseDtos = new ArrayList<>();
 
-        for (Book book : books)
-        {
+        for (Book book : books) {
             BookResponseDto bookResponseDto = modelMapper.map(book, BookResponseDto.class);
             bookResponseDtos.add(bookResponseDto);
         }
@@ -62,8 +60,9 @@ public class BookService {
         return bookResponseDtos;
     }
 
-    public Book findBook(Integer bookId)
-    {
+    public Book findBook(Integer bookId) {
         return bookRepository.findById(bookId).get();
     }
+
+
 }

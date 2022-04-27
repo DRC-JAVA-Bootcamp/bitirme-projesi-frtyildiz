@@ -1,6 +1,7 @@
 package com.firatyildiz.LibraryManagementSystem.controller;
 
 import com.firatyildiz.LibraryManagementSystem.dto.requestDto.SaveAuthorRequestDto;
+import com.firatyildiz.LibraryManagementSystem.dto.requestDto.UpdateAuthorRequestDto;
 import com.firatyildiz.LibraryManagementSystem.entity.Author;
 import com.firatyildiz.LibraryManagementSystem.service.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +36,12 @@ public class AuthorController {
         return new ResponseEntity<>(author, HttpStatus.OK);
     }
 
-
+    @PostMapping("/updateAuthor")
+    public ResponseEntity<String> updateAuthor(@RequestBody UpdateAuthorRequestDto updateAuthorRequestDto)
+    {
+        String updateAuthorDescription = authorService.updateAuthor(updateAuthorRequestDto);
+        return new ResponseEntity<>(updateAuthorDescription, HttpStatus.OK);
+    }
 
 
 

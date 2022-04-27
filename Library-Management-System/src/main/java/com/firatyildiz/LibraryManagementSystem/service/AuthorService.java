@@ -1,6 +1,7 @@
 package com.firatyildiz.LibraryManagementSystem.service;
 
 import com.firatyildiz.LibraryManagementSystem.dto.requestDto.SaveAuthorRequestDto;
+import com.firatyildiz.LibraryManagementSystem.dto.requestDto.UpdateAuthorRequestDto;
 import com.firatyildiz.LibraryManagementSystem.entity.Author;
 import com.firatyildiz.LibraryManagementSystem.repository.AuthorRepository;
 import org.modelmapper.ModelMapper;
@@ -33,16 +34,24 @@ public class AuthorService {
         return authorRepository.findById(authorId).get();
     }
 
-    /*
-    public String saveAuthorToBookByIds(int bookId, int authorId) {
+    public String updateAuthor(UpdateAuthorRequestDto updateAuthorRequestDto)
+    {
+        int idAuthorRequest = updateAuthorRequestDto.getId();
+        String nameAuthorRequest = updateAuthorRequestDto.getName();
+        String lastnameAuthorRequest = updateAuthorRequestDto.getLastname();
 
-        Book book = new Book();
-        Author author = new Author();
+        Optional<Author> authorOptional = authorRepository.findById(idAuthorRequest);
+        Author author = authorOptional.get();
 
-        Author authorRequest = author.getId(authorId);
+        author.setName(lastnameAuthorRequest);
+        author.setName(nameAuthorRequest);
+
+        authorRepository.save(author);
+
+        return "Değişiklikler Başarıyla Gerçekleştirildi.";
     }
 
-     */
+
 
 
 }
