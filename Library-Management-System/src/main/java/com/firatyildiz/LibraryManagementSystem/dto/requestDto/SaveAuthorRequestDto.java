@@ -5,5 +5,7 @@ import lombok.Data;
 @Data
 public class SaveAuthorRequestDto {
 
-    
+    private String name;
+
+    private String lastname;
 }

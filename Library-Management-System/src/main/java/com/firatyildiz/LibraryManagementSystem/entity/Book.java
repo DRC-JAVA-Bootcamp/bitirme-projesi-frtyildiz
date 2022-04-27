@@ -31,11 +31,11 @@ public class Book {
     private String publisher;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinTable(name = "AuthorBook")
+    @JoinTable(name = "AuthorBook", joinColumns = @JoinColumn(name = "book_id"))
     private Author author;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinTable(name = "categoryBook")
+    @JoinTable(name = "categoryBook",joinColumns = @JoinColumn(name = "book_id"))
     private Category category;
 
     @Column(name = "Language", length = 25)
