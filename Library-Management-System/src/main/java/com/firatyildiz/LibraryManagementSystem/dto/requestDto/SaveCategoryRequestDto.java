@@ -1,4 +1,9 @@
 package com.firatyildiz.LibraryManagementSystem.dto.requestDto;
 
-public interface SaveCategoryRequestDto {
+import lombok.Data;
+
+@Data
+public class SaveCategoryRequestDto {
+
+    private String categoryName;
 }
