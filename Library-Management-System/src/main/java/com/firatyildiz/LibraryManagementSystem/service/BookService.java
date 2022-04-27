@@ -1,13 +1,12 @@
 package com.firatyildiz.LibraryManagementSystem.service;
 
-import com.firatyildiz.LibraryManagementSystem.converter.BookConverter;
 import com.firatyildiz.LibraryManagementSystem.dto.requestDto.SaveBookRequestDto;
 import com.firatyildiz.LibraryManagementSystem.entity.Book;
 import com.firatyildiz.LibraryManagementSystem.repository.BookRepository;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 
 @Service
 public class BookService {
@@ -16,11 +15,11 @@ public class BookService {
     BookRepository bookRepository;
 
     @Autowired
-    BookConverter bookConverter;
+    ModelMapper modelMapper;
 
     public String saveBook(SaveBookRequestDto saveBookRequestDto)
     {
-        Book book = bookConverter.convertToBookFromSaveBookRequestDto(saveBookRequestDto);
+        Book book = modelMapper.map(saveBookRequestDto, Book.class);
 
         book = bookRepository.save(book);
 
