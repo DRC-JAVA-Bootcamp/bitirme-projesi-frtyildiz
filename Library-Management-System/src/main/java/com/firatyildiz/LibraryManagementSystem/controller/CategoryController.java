@@ -2,12 +2,15 @@ package com.firatyildiz.LibraryManagementSystem.controller;
 
 import com.firatyildiz.LibraryManagementSystem.dto.requestDto.SaveCategoryRequestDto;
 import com.firatyildiz.LibraryManagementSystem.dto.requestDto.UpdateCategoryRequestDto;
+import com.firatyildiz.LibraryManagementSystem.dto.responseDto.CategoryResponseDto;
 import com.firatyildiz.LibraryManagementSystem.entity.Category;
 import com.firatyildiz.LibraryManagementSystem.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/category")
@@ -32,6 +35,13 @@ public class CategoryController {
     {
         Category category = categoryService.findCategory(categoryId);
         return new ResponseEntity<>(category, HttpStatus.OK);
+    }
+
+    @GetMapping("/findAllCategory")
+    public ResponseEntity<List<CategoryResponseDto>> findAllCategory()
+    {
+        List<CategoryResponseDto> categoryResponseDtos = categoryService.findAllCategory();
+        return new ResponseEntity<>(categoryResponseDtos, HttpStatus.OK);
     }
 
     @PostMapping("/updateCategory")
