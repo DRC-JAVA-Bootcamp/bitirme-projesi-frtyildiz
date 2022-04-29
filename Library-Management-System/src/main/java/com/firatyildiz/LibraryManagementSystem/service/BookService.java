@@ -1,6 +1,7 @@
 package com.firatyildiz.LibraryManagementSystem.service;
 
 import com.firatyildiz.LibraryManagementSystem.dto.requestDto.SaveBookRequestDto;
+import com.firatyildiz.LibraryManagementSystem.dto.requestDto.UpdateBookRequestDto;
 import com.firatyildiz.LibraryManagementSystem.dto.responseDto.BookResponseDto;
 import com.firatyildiz.LibraryManagementSystem.entity.Author;
 import com.firatyildiz.LibraryManagementSystem.entity.Book;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 
 @Service
@@ -65,4 +67,21 @@ public class BookService {
     }
 
 
+    public String updateBook(UpdateBookRequestDto updateBookRequestDto)
+    {
+
+        Book book = modelMapper.map(updateBookRequestDto, Book.class);
+        List<Author> authors = new ArrayList();
+        for (Integer authorId : updateBookRequestDto.getAuthorId()) {
+            Author author = authorService.findAuthor(authorId);
+            authors.add(author);
+        }
+        book.setAuthors(authors);
+
+        Category category = categoryService.findCategory(updateBookRequestDto.getCategoryId());
+        book.setCategory(category);
+        bookRepository.save(book);
+
+        return "Değişiklikler Başarıyla Gerçekleştirildi.";
+    }
 }

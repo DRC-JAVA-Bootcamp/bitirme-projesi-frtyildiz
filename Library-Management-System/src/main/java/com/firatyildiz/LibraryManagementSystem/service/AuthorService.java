@@ -31,6 +31,11 @@ public class AuthorService {
         return author.getName() + " " + author.getLastname() + " İsimli Yazar Başarıyla Oluşturuldu.";
     }
 
+    public Author findAuthorById(Integer authorId)
+    {
+        return authorRepository.findById(authorId).get();
+    }
+
     public Author findAuthor(Integer authorId)
     {
         return authorRepository.findById(authorId).get();

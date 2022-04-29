@@ -1,19 +1,18 @@
-package com.firatyildiz.LibraryManagementSystem.dto.responseDto;
+package com.firatyildiz.LibraryManagementSystem.dto.requestDto;
 
-import com.firatyildiz.LibraryManagementSystem.entity.Author;
 import lombok.Data;
 
 import java.time.LocalDate;
 import java.util.List;
 
 @Data
-public class BookResponseDto {
+public class UpdateBookRequestDto {
 
     private long isbn;
 
     private String title;
 
-    private List<Author> authors;
+    private List<Integer> authorId;
 
     private String publisher;
 

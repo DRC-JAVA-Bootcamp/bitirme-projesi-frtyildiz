@@ -1,6 +1,8 @@
 package com.firatyildiz.LibraryManagementSystem.controller;
 
 import com.firatyildiz.LibraryManagementSystem.dto.requestDto.SaveBookRequestDto;
+import com.firatyildiz.LibraryManagementSystem.dto.requestDto.UpdateAuthorRequestDto;
+import com.firatyildiz.LibraryManagementSystem.dto.requestDto.UpdateBookRequestDto;
 import com.firatyildiz.LibraryManagementSystem.dto.responseDto.BookResponseDto;
 import com.firatyildiz.LibraryManagementSystem.entity.Book;
 import com.firatyildiz.LibraryManagementSystem.service.BookService;
@@ -52,6 +54,12 @@ public class BookController {
         return new ResponseEntity<>(book, HttpStatus.OK);
     }
 
-
+    @PostMapping("/updateBook")
+    public ResponseEntity<String> updateBook(@RequestBody UpdateBookRequestDto updateBookRequestDto)
+    {
+        String updateBookDescription = bookService.updateBook(updateBookRequestDto);
+        return new ResponseEntity<>(updateBookDescription, HttpStatus.OK);
+    }
+    
 
 }
