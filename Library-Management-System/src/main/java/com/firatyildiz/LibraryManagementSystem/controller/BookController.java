@@ -60,6 +60,12 @@ public class BookController {
         String updateBookDescription = bookService.updateBook(updateBookRequestDto);
         return new ResponseEntity<>(updateBookDescription, HttpStatus.OK);
     }
-    
+
+    @DeleteMapping("/deleteBook")
+    public ResponseEntity<String> deleteBookById(@RequestParam Integer bookId)
+    {
+        String deleteBookDescription = bookService.deleteBookById(bookId);
+        return new ResponseEntity<>(deleteBookDescription, HttpStatus.OK);
+    }
 
 }

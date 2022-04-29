@@ -84,4 +84,11 @@ public class BookService {
 
         return "Değişiklikler Başarıyla Gerçekleştirildi.";
     }
+
+    public String deleteBookById(Integer bookId)
+    {
+        Book book = bookRepository.findById(bookId).get();
+        bookRepository.delete(book);
+        return "Silme İşlemi Başarıyla Gerçekleştirildi.";
+    }
 }
