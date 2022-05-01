@@ -12,5 +12,4 @@ public class SaveAuthorRequestDto {
 
     private String lastname;
 
-    private List<Book> books;
 }

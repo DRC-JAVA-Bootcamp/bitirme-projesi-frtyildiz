@@ -8,11 +8,13 @@ import java.util.List;
 @Data
 public class UpdateBookRequestDto {
 
+    private int id; //
+
     private long isbn;
 
     private String title;
 
-    private List<Integer> authorId;
+    private int authorId;
 
     private String publisher;
 

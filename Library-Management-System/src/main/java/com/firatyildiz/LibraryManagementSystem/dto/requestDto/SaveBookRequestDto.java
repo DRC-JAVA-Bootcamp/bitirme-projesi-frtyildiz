@@ -13,7 +13,7 @@ public class SaveBookRequestDto {
 
     private String title;
 
-    private List<Integer> authorId;
+    private int authorId;
 
     private String publisher;
 

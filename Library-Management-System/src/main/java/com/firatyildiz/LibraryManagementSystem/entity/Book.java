@@ -27,11 +27,11 @@ public class Book {
     @Column(name = "Publisher", length = 75)
     private String publisher;
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinTable(name = "bookAuthor", joinColumns = @JoinColumn(name = "book_id"))
-    private List<Author> authors = new ArrayList<>();
+    @ManyToOne
+    @JoinColumn(name = "authorId")
+    private Author author;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
 

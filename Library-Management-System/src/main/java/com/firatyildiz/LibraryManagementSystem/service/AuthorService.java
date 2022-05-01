@@ -36,10 +36,6 @@ public class AuthorService {
         return authorRepository.findById(authorId).get();
     }
 
-    public Author findAuthor(Integer authorId)
-    {
-        return authorRepository.findById(authorId).get();
-    }
 
     public String updateAuthor(UpdateAuthorRequestDto updateAuthorRequestDto)
     {
@@ -78,4 +74,7 @@ public class AuthorService {
 
         return authorResponseDtos;
     }
+
+
+
 }

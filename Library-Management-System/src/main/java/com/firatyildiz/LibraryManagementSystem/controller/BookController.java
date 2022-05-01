@@ -29,7 +29,7 @@ public class BookController {
         /*
             "isbn":9789755393735,
             "title":"Büyücü",
-            "authorId":[2],
+            "authorId":2,
             "publisher":"Ayrıntı Yayınları",
             "language":"Türkçe",
             "page":688,

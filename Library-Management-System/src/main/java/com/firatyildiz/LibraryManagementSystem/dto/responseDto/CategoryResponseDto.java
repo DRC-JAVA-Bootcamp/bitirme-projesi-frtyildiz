@@ -12,6 +12,6 @@ public class CategoryResponseDto {
 
     private String categoryName;
 
-    private List<Book> books;
+    private int bookId;
 
 }

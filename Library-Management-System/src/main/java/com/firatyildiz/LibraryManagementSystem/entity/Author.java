@@ -21,7 +21,8 @@ public class Author {
     @Column(name = "Lastname", length = 50)
     private String lastname;
 
-    @OneToMany(mappedBy = "authors", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Book> books = new ArrayList<>();
+    @ManyToOne
+    @JoinColumn
+    private Book book;
 
 }

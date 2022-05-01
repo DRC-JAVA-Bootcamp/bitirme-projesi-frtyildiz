@@ -6,14 +6,15 @@ import com.firatyildiz.LibraryManagementSystem.dto.responseDto.BookResponseDto;
 import com.firatyildiz.LibraryManagementSystem.entity.Author;
 import com.firatyildiz.LibraryManagementSystem.entity.Book;
 import com.firatyildiz.LibraryManagementSystem.entity.Category;
+import com.firatyildiz.LibraryManagementSystem.repository.AuthorRepository;
 import com.firatyildiz.LibraryManagementSystem.repository.BookRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 
 @Service
@@ -31,19 +32,41 @@ public class BookService {
     @Autowired
     CategoryService categoryService;
 
+    @Autowired
+    AuthorRepository authorRepository;
 
     public String saveBook(SaveBookRequestDto saveBookRequestDto) {
-        Book book = modelMapper.map(saveBookRequestDto, Book.class);
-        List<Author> authors = new ArrayList();
-        for (Integer authorId : saveBookRequestDto.getAuthorId()) {
-            Author author = authorService.findAuthor(authorId);
-            authors.add(author);
-        }
-        book.setAuthors(authors);
+        long isbnRequest = saveBookRequestDto.getIsbn();
+        String titleRequest = saveBookRequestDto.getTitle();
+        int authorIdRequest = saveBookRequestDto.getAuthorId();
+        String publisherRequest = saveBookRequestDto.getPublisher();
+        String languageRequest = saveBookRequestDto.getLanguage();
+        int pageRequest = saveBookRequestDto.getPage();
+        String explanationRequest = saveBookRequestDto.getExplanation();
+        LocalDate publicationDateRequest = saveBookRequestDto.getPublicationDate();
+        String formatRequest = saveBookRequestDto.getFormat();
+        int categoryIdRequest = saveBookRequestDto.getCategoryId();
 
-        Category category = categoryService.findCategory(saveBookRequestDto.getCategoryId());
+        Category category = categoryService.findCategory(categoryIdRequest);
+        Author author = authorRepository.findById(authorIdRequest).get();
+
+        Book book = new Book();
+
+        book.setIsbn(isbnRequest);
+        book.setTitle(titleRequest);
+        book.setAuthor(author);
+        book.setPublisher(publisherRequest);
+        book.setLanguage(languageRequest);
+        book.setPage(pageRequest);
+        book.setExplanation(explanationRequest);
+        book.setPublicationDate(publicationDateRequest);
+        book.setFormat(formatRequest);
         book.setCategory(category);
-        book = bookRepository.save(book);
+
+        category.setBook(book);
+        author.setBook(book);
+
+        bookRepository.save(book);
 
         return book.getTitle() + " Kitabı Sisteme Başarıyla Eklendi.";
 //        return book.getAuthor() + " Yazarına Ait " + book.getTitle() + " Kitabı Sisteme Başarıyla Eklendi.";
@@ -70,16 +93,36 @@ public class BookService {
     public String updateBook(UpdateBookRequestDto updateBookRequestDto)
     {
 
-        Book book = modelMapper.map(updateBookRequestDto, Book.class);
-        List<Author> authors = new ArrayList();
-        for (Integer authorId : updateBookRequestDto.getAuthorId()) {
-            Author author = authorService.findAuthor(authorId);
-            authors.add(author);
-        }
-        book.setAuthors(authors);
+        long isbnRequest = updateBookRequestDto.getIsbn();
+        String titleRequest = updateBookRequestDto.getTitle();
+        int authorIdRequest = updateBookRequestDto.getAuthorId();
+        String publisherRequest = updateBookRequestDto.getPublisher();
+        String languageRequest = updateBookRequestDto.getLanguage();
+        int pageRequest = updateBookRequestDto.getPage();
+        String explanationRequest = updateBookRequestDto.getExplanation();
+        LocalDate publicationDateRequest = updateBookRequestDto.getPublicationDate();
+        String formatRequest = updateBookRequestDto.getFormat();
+        int categoryIdRequest = updateBookRequestDto.getCategoryId();
 
-        Category category = categoryService.findCategory(updateBookRequestDto.getCategoryId());
+        Category category = categoryService.findCategory(categoryIdRequest);
+        Author author = authorRepository.findById(authorIdRequest).get();
+
+        Book book = new Book();
+
+        book.setIsbn(isbnRequest);
+        book.setTitle(titleRequest);
+        book.setAuthor(author);
+        book.setPublisher(publisherRequest);
+        book.setLanguage(languageRequest);
+        book.setPage(pageRequest);
+        book.setExplanation(explanationRequest);
+        book.setPublicationDate(publicationDateRequest);
+        book.setFormat(formatRequest);
         book.setCategory(category);
+
+        category.setBook(book);
+        author.setBook(book);
+
         bookRepository.save(book);
 
         return "Değişiklikler Başarıyla Gerçekleştirildi.";
@@ -91,4 +134,8 @@ public class BookService {
         bookRepository.delete(book);
         return "Silme İşlemi Başarıyla Gerçekleştirildi.";
     }
+
+
+
+
 }

@@ -14,5 +14,5 @@ public class AuthorResponseDto {
 
     private String lastname;
 
-    private List<Book> books;
+    private int bookId;
 }

@@ -13,7 +13,7 @@ public class BookResponseDto {
 
     private String title;
 
-    private List<Author> authors;
+    private int authorId;
 
     private String publisher;
 
