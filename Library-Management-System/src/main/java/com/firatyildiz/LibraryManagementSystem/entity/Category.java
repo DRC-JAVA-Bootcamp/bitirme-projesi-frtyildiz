@@ -18,9 +18,8 @@ public class Category {
     @Column(name = "categoryName")
     private String categoryName;
 
-    @ManyToOne
-    @JoinColumn
-    private Book book;
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Book> books = new ArrayList<>();
 
 
 }

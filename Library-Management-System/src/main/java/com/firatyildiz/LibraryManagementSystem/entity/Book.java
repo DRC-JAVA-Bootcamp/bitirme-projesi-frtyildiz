@@ -28,11 +28,11 @@ public class Book {
     private String publisher;
 
     @ManyToOne
-    @JoinColumn(name = "authorId")
+    @JoinColumn
     private Author author;
 
     @ManyToOne
-    @JoinColumn(name = "category_id")
+    @JoinColumn
     private Category category;
 
     @Column(name = "Language", length = 25)

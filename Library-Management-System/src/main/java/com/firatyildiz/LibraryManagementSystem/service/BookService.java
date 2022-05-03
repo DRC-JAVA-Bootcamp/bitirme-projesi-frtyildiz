@@ -63,8 +63,15 @@ public class BookService {
         book.setFormat(formatRequest);
         book.setCategory(category);
 
-        category.setBook(book);
-        author.setBook(book);
+
+        List<Book> bookList = new ArrayList<>();
+        bookList.add(book);
+        category.setBooks(bookList);
+
+        author.setBooks(bookList);
+
+        //category.setBook(book);
+        //author.setBook(book);
 
         bookRepository.save(book);
 
@@ -120,8 +127,8 @@ public class BookService {
         book.setFormat(formatRequest);
         book.setCategory(category);
 
-        category.setBook(book);
-        author.setBook(book);
+        //category.setBook(book);
+        //author.setBook(book);
 
         bookRepository.save(book);
 
