@@ -46,7 +46,7 @@ public class AuthorService {
         Optional<Author> authorOptional = authorRepository.findById(idAuthorRequest);
         Author author = authorOptional.get();
 
-        author.setName(lastnameAuthorRequest);
+        author.setLastname(lastnameAuthorRequest);
         author.setName(nameAuthorRequest);
 
         authorRepository.save(author);
