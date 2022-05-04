@@ -15,10 +15,6 @@ public class AuthorServiceValidation {
         {
             return false;
         }
-        if (textualValue.trim().length() == 0)
-        {
-            return false;
-        }
         if (textualValue.length() > 50)
         {
             return false;
