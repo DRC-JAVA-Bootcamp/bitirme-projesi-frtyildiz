@@ -1,6 +1,7 @@
 package com.firatyildiz.LibraryManagementSystem.service;
 
 import com.firatyildiz.LibraryManagementSystem.dto.requestDto.SaveCategoryRequestDto;
+import com.firatyildiz.LibraryManagementSystem.dto.requestDto.UpdateCategoryRequestDto;
 import com.firatyildiz.LibraryManagementSystem.entity.Category;
 import com.firatyildiz.LibraryManagementSystem.repository.CategoryRepository;
 import org.junit.jupiter.api.Test;
@@ -10,7 +11,10 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.modelmapper.ModelMapper;
 
+import java.util.Optional;
+
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -47,18 +51,39 @@ class CategoryServiceTest {
     @Test
     void testFindCategory()
     {
+        Category category = mock(Category.class);
+        category.setId(1);
 
+        when(categoryRepository.findById(category.getId())).thenReturn(Optional.of(category));
+        Category findCategory = categoryService.findCategory(category.getId());
+
+        assertEquals(category, findCategory);
     }
 
     @Test
     void testUpdateCategory()
     {
+        Category category = mock(Category.class);
+        category.setId(1);
+        category.setCategoryName("testName");
 
+        UpdateCategoryRequestDto updateCategoryRequestDto = mock(UpdateCategoryRequestDto.class);
+        updateCategoryRequestDto.setCategoryName("updateTestName");
+
+        when(categoryRepository.findById(category.getId())).thenReturn(Optional.of(category));
+
+        String updateCategory = categoryService.updateCategory(updateCategoryRequestDto);
+        String updateCategoryMessage = "Değişiklik Başarıyla Gerçekleştirildi.";
+
+        assertEquals(updateCategory, updateCategoryMessage);
     }
 
     @Test
     void testDeleteCategoryById()
     {
+        Category category = mock(Category.class);
+        category.setId(1);
+
 
     }
 }
