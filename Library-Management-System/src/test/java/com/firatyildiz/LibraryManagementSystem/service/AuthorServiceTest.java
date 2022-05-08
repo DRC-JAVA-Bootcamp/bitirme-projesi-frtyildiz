@@ -1,6 +1,7 @@
 package com.firatyildiz.LibraryManagementSystem.service;
 
 import com.firatyildiz.LibraryManagementSystem.dto.requestDto.SaveAuthorRequestDto;
+import com.firatyildiz.LibraryManagementSystem.dto.requestDto.UpdateAuthorRequestDto;
 import com.firatyildiz.LibraryManagementSystem.entity.Author;
 import com.firatyildiz.LibraryManagementSystem.repository.AuthorRepository;
 import org.junit.jupiter.api.Test;
@@ -71,6 +72,25 @@ class AuthorServiceTest {
         assertEquals(saveAuthorMessage, saveAuthor);
     }
 
+    @Test
+    void testUpdateAuthor()
+    {
+        Author author = mock(Author.class);
+        author.setId(1);
+        author.setName("testName");
+        author.setLastname("testLastname");
 
+        UpdateAuthorRequestDto updateAuthorRequestDto = mock(UpdateAuthorRequestDto.class);
+        updateAuthorRequestDto.setId(1);
+        updateAuthorRequestDto.setName("updateTestName");
+        updateAuthorRequestDto.setLastname("updateTestLastname");
+
+        when(authorRepository.findById(author.getId())).thenReturn(Optional.of(author));
+
+        String updateAuthor = authorService.updateAuthor(updateAuthorRequestDto);
+        String updateAuthorMessage = "Değişiklikler Başarıyla Gerçekleştirildi.";
+
+        assertEquals(updateAuthorMessage, updateAuthor);
+    }
 
 }

@@ -68,21 +68,8 @@
       <recent name="com.firatyildiz.LibraryManagementSystem.service" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AuthorServiceTest.testSaveAuthor">
-    <configuration name="LibraryManagementSystemApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.firatyildiz.LibraryManagementSystem.LibraryManagementSystemApplication" />
-      <module name="Library-Management-System" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.firatyildiz.LibraryManagementSystem.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AuthorServiceTest.findAuthorById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.AuthorServiceTest">
+    <configuration name="AuthorServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Library-Management-System" />
       <extension name="coverage">
         <pattern>
@@ -92,8 +79,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.firatyildiz.LibraryManagementSystem.service" />
       <option name="MAIN_CLASS_NAME" value="com.firatyildiz.LibraryManagementSystem.service.AuthorServiceTest" />
-      <option name="METHOD_NAME" value="findAuthorById" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -146,13 +132,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AuthorServiceTest.testUpdateAuthor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Library-Management-System" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.firatyildiz.LibraryManagementSystem.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.firatyildiz.LibraryManagementSystem.service" />
+      <option name="MAIN_CLASS_NAME" value="com.firatyildiz.LibraryManagementSystem.service.AuthorServiceTest" />
+      <option name="METHOD_NAME" value="testUpdateAuthor" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AuthorServiceTest" />
+        <item itemvalue="JUnit.AuthorServiceTest.testUpdateAuthor" />
         <item itemvalue="JUnit.AuthorServiceTest.testSaveAuthor" />
         <item itemvalue="JUnit.AuthorServiceTest.testDeleteAuthorById" />
         <item itemvalue="JUnit.AuthorServiceTest.testFindAuthorById" />
-        <item itemvalue="Application.LibraryManagementSystemApplication" />
-        <item itemvalue="JUnit.AuthorServiceTest.findAuthorById" />
       </list>
     </recent_temporary>
   </component>
