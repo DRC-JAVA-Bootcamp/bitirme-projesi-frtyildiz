@@ -1,5 +1,6 @@
 package com.firatyildiz.LibraryManagementSystem.service;
 
+import com.firatyildiz.LibraryManagementSystem.dto.requestDto.SaveAuthorRequestDto;
 import com.firatyildiz.LibraryManagementSystem.entity.Author;
 import com.firatyildiz.LibraryManagementSystem.repository.AuthorRepository;
 import org.junit.jupiter.api.Test;
@@ -51,4 +52,25 @@ class AuthorServiceTest {
 
         assertEquals(deleteMessage, deleteAuthor);
     }
+
+    @Test
+    void testSaveAuthor()
+    {
+        SaveAuthorRequestDto saveAuthorRequestDto = mock(SaveAuthorRequestDto.class);
+        saveAuthorRequestDto.setName("testName");
+        saveAuthorRequestDto.setLastname("testLastname");
+
+        Author author = mock(Author.class);
+        author.setId(1);
+
+        when(modelMapper.map(saveAuthorRequestDto, Author.class)).thenReturn(author);
+        when(authorRepository.save(author)).thenReturn(author);
+        String saveAuthor = authorService.saveAuthor(saveAuthorRequestDto);
+        String saveAuthorMessage = author.getName() + " " + author.getLastname() + " İsimli Yazar Başarıyla Oluşturuldu.";
+
+        assertEquals(saveAuthorMessage, saveAuthor);
+    }
+
+
+
 }
