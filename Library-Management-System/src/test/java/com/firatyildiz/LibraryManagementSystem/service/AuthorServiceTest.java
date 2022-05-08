@@ -12,6 +12,8 @@ import org.modelmapper.ModelMapper;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -33,12 +35,20 @@ class AuthorServiceTest {
         author.setId(1);
 
         when(authorRepository.findById(author.getId())).thenReturn(Optional.of(author));
-        Author deleteAuthor = authorService.findAuthorById(author.getId());
+        Author findAuthor = authorService.findAuthorById(author.getId());
 
-        assertEquals(author, deleteAuthor);
+        assertEquals(author, findAuthor);
     }
 
     @Test
-    void deleteAuthorById() {
+    void testDeleteAuthorById() {
+        Author author = mock(Author.class);
+        author.setId(1);
+
+        when(authorRepository.findById(author.getId())).thenReturn(Optional.of(author));
+        String deleteAuthor = authorService.deleteAuthorById(author.getId());
+        String deleteMessage = "Silme İşlemi Başarıyla Gerçekleştirildi.";
+
+        assertEquals(deleteMessage, deleteAuthor);
     }
 }

@@ -68,7 +68,7 @@
       <recent name="com.firatyildiz.LibraryManagementSystem.service" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AuthorServiceTest.testFindAuthorById">
+  <component name="RunManager" selected="JUnit.AuthorServiceTest.testDeleteAuthorById">
     <configuration name="LibraryManagementSystemApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.firatyildiz.LibraryManagementSystem.LibraryManagementSystemApplication" />
       <module name="Library-Management-System" />
@@ -98,6 +98,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AuthorServiceTest.testDeleteAuthorById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Library-Management-System" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.firatyildiz.LibraryManagementSystem.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.firatyildiz.LibraryManagementSystem.service" />
+      <option name="MAIN_CLASS_NAME" value="com.firatyildiz.LibraryManagementSystem.service.AuthorServiceTest" />
+      <option name="METHOD_NAME" value="testDeleteAuthorById" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AuthorServiceTest.testFindAuthorById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Library-Management-System" />
       <extension name="coverage">
@@ -116,6 +132,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AuthorServiceTest.testDeleteAuthorById" />
         <item itemvalue="JUnit.AuthorServiceTest.testFindAuthorById" />
         <item itemvalue="Application.LibraryManagementSystemApplication" />
         <item itemvalue="JUnit.AuthorServiceTest.findAuthorById" />
