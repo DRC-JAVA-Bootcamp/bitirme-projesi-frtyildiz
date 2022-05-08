@@ -83,7 +83,6 @@ class AuthorServiceTest {
         author.setLastname("testLastname");
 
         UpdateAuthorRequestDto updateAuthorRequestDto = mock(UpdateAuthorRequestDto.class);
-        updateAuthorRequestDto.setId(1);
         updateAuthorRequestDto.setName("updateTestName");
         updateAuthorRequestDto.setLastname("updateTestLastname");
 
