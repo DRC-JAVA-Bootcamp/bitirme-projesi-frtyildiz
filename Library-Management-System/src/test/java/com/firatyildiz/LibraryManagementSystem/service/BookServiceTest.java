@@ -44,23 +44,23 @@ class BookServiceTest {
     @Test
     void testFindBook()
     {
-        Book book = mock(Book.class);
-        book.setId(1);
+        Book bookMock = mock(Book.class);
+        bookMock.setId(1);
 
-        when(bookRepository.findById(book.getId())).thenReturn(Optional.of(book));
-        Book findBook = bookService.findBook(book.getId());
+        when(bookRepository.findById(bookMock.getId())).thenReturn(Optional.of(bookMock));
+        Book findBook = bookService.findBook(bookMock.getId());
 
-        assertEquals(book, findBook);
+        assertEquals(bookMock, findBook);
     }
 
     @Test
     void testDeleteBookById()
     {
-        Book book = mock(Book.class);
-        book.setId(1);
+        Book bookMock = mock(Book.class);
+        bookMock.setId(1);
 
-        when(bookRepository.findById(book.getId())).thenReturn(Optional.of(book));
-        String deleteBook = bookService.deleteBookById(book.getId());
+        when(bookRepository.findById(bookMock.getId())).thenReturn(Optional.of(bookMock));
+        String deleteBook = bookService.deleteBookById(bookMock.getId());
         String deleteBookMessage = "Silme İşlemi Başarıyla Gerçekleştirildi.";
 
         assertEquals(deleteBook, deleteBookMessage);
@@ -70,22 +70,23 @@ class BookServiceTest {
     @Test
     void testUpdateBook()
     {
-        Book book = mock(Book.class);
-        book.setId(1);
-        book.setPage(734);
-        book.setTitle("testTitle");
+        Book bookMock = mock(Book.class);
+        bookMock.setId(1);
+        bookMock.setPage(734);
+        bookMock.setTitle("testTitle");
 
-        UpdateBookRequestDto updateBookRequestDto = mock(UpdateBookRequestDto.class);
-        updateBookRequestDto.setId(1);
-        updateBookRequestDto.setTitle("updateTestTitle");
+        UpdateBookRequestDto updateBookRequestDtoMock = mock(UpdateBookRequestDto.class);
+        updateBookRequestDtoMock.setId(1);
+        updateBookRequestDtoMock.setTitle("updateTestTitle");
 
-        when(bookRepository.findById(any())).thenReturn(Optional.of(book));
-        String updateBook = bookService.updateBook(updateBookRequestDto);
+        when(bookRepository.findById(any())).thenReturn(Optional.of(bookMock));
+        String updateBook = bookService.updateBook(updateBookRequestDtoMock);
         String updateBookMessage = "Değişiklikler Başarıyla Gerçekleştirildi.";
 
         assertEquals(updateBook, updateBookMessage);
     }
      */
+
 
     @Test
     void testSaveBook()

@@ -34,23 +34,23 @@ class AuthorServiceTest {
     @Test
     void testFindAuthorById()
     {
-        Author author = mock(Author.class);
-        author.setId(1);
+        Author authorMock = mock(Author.class);
+        authorMock.setId(1);
 
-        when(authorRepository.findById(author.getId())).thenReturn(Optional.of(author));
-        Author findAuthor = authorService.findAuthorById(author.getId());
+        when(authorRepository.findById(authorMock.getId())).thenReturn(Optional.of(authorMock));
+        Author findAuthor = authorService.findAuthorById(authorMock.getId());
 
-        assertEquals(author, findAuthor);
+        assertEquals(authorMock, findAuthor);
     }
 
     @Test
     void testDeleteAuthorById()
     {
-        Author author = mock(Author.class);
-        author.setId(1);
+        Author authorMock = mock(Author.class);
+        authorMock.setId(1);
 
-        when(authorRepository.findById(author.getId())).thenReturn(Optional.of(author));
-        String deleteAuthor = authorService.deleteAuthorById(author.getId());
+        when(authorRepository.findById(authorMock.getId())).thenReturn(Optional.of(authorMock));
+        String deleteAuthor = authorService.deleteAuthorById(authorMock.getId());
         String deleteMessage = "Silme İşlemi Başarıyla Gerçekleştirildi.";
 
         assertEquals(deleteMessage, deleteAuthor);
@@ -59,17 +59,17 @@ class AuthorServiceTest {
     @Test
     void testSaveAuthor()
     {
-        SaveAuthorRequestDto saveAuthorRequestDto = mock(SaveAuthorRequestDto.class);
-        saveAuthorRequestDto.setName("testName");
-        saveAuthorRequestDto.setLastname("testLastname");
+        SaveAuthorRequestDto saveAuthorRequestDtoMock = mock(SaveAuthorRequestDto.class);
+        saveAuthorRequestDtoMock.setName("testName");
+        saveAuthorRequestDtoMock.setLastname("testLastname");
 
-        Author author = mock(Author.class);
-        author.setId(1);
+        Author authorMock = mock(Author.class);
+        authorMock.setId(1);
 
-        when(modelMapper.map(saveAuthorRequestDto, Author.class)).thenReturn(author);
-        when(authorRepository.save(author)).thenReturn(author);
-        String saveAuthor = authorService.saveAuthor(saveAuthorRequestDto);
-        String saveAuthorMessage = author.getName() + " " + author.getLastname() + " İsimli Yazar Başarıyla Oluşturuldu.";
+        when(modelMapper.map(saveAuthorRequestDtoMock, Author.class)).thenReturn(authorMock);
+        when(authorRepository.save(authorMock)).thenReturn(authorMock);
+        String saveAuthor = authorService.saveAuthor(saveAuthorRequestDtoMock);
+        String saveAuthorMessage = authorMock.getName() + " " + authorMock.getLastname() + " İsimli Yazar Başarıyla Oluşturuldu.";
 
         assertEquals(saveAuthorMessage, saveAuthor);
     }
@@ -77,18 +77,18 @@ class AuthorServiceTest {
     @Test
     void testUpdateAuthor()
     {
-        Author author = mock(Author.class);
-        author.setId(1);
-        author.setName("testName");
-        author.setLastname("testLastname");
+        Author authorMock = mock(Author.class);
+        authorMock.setId(1);
+        authorMock.setName("testName");
+        authorMock.setLastname("testLastname");
 
-        UpdateAuthorRequestDto updateAuthorRequestDto = mock(UpdateAuthorRequestDto.class);
-        updateAuthorRequestDto.setName("updateTestName");
-        updateAuthorRequestDto.setLastname("updateTestLastname");
+        UpdateAuthorRequestDto updateAuthorRequestDtoMock = mock(UpdateAuthorRequestDto.class);
+        updateAuthorRequestDtoMock.setName("updateTestName");
+        updateAuthorRequestDtoMock.setLastname("updateTestLastname");
 
-        when(authorRepository.findById(author.getId())).thenReturn(Optional.of(author));
+        when(authorRepository.findById(authorMock.getId())).thenReturn(Optional.of(authorMock));
 
-        String updateAuthor = authorService.updateAuthor(updateAuthorRequestDto);
+        String updateAuthor = authorService.updateAuthor(updateAuthorRequestDtoMock);
         String updateAuthorMessage = "Değişiklikler Başarıyla Gerçekleştirildi.";
 
         assertEquals(updateAuthorMessage, updateAuthor);

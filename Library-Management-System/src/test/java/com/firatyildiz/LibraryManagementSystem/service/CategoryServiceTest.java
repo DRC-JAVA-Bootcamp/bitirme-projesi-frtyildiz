@@ -33,17 +33,17 @@ class CategoryServiceTest {
     @Test
     void testSaveCategory()
     {
-        SaveCategoryRequestDto saveCategoryRequestDto = mock(SaveCategoryRequestDto.class);
-        saveCategoryRequestDto.setCategoryName("testName");
+        SaveCategoryRequestDto saveCategoryRequestDtoMock = mock(SaveCategoryRequestDto.class);
+        saveCategoryRequestDtoMock.setCategoryName("testName");
 
-        Category category = mock(Category.class);
-        category.setId(1);
+        Category categoryMock = mock(Category.class);
+        categoryMock.setId(1);
 
-        when(modelMapper.map(saveCategoryRequestDto, Category.class)).thenReturn(category);
-        when(categoryRepository.save(category)).thenReturn(category);
+        when(modelMapper.map(saveCategoryRequestDtoMock, Category.class)).thenReturn(categoryMock);
+        when(categoryRepository.save(categoryMock)).thenReturn(categoryMock);
 
-        String saveCategory = categoryService.saveCategory(saveCategoryRequestDto);
-        String saveCategoryMessage = category.getCategoryName() + " Kategorisi Başarıyla Oluşturuldu.";
+        String saveCategory = categoryService.saveCategory(saveCategoryRequestDtoMock);
+        String saveCategoryMessage = categoryMock.getCategoryName() + " Kategorisi Başarıyla Oluşturuldu.";
 
         assertEquals(saveCategory, saveCategoryMessage);
     }
@@ -51,28 +51,28 @@ class CategoryServiceTest {
     @Test
     void testFindCategory()
     {
-        Category category = mock(Category.class);
-        category.setId(1);
+        Category categoryMock = mock(Category.class);
+        categoryMock.setId(1);
 
-        when(categoryRepository.findById(category.getId())).thenReturn(Optional.of(category));
-        Category findCategory = categoryService.findCategory(category.getId());
+        when(categoryRepository.findById(categoryMock.getId())).thenReturn(Optional.of(categoryMock));
+        Category findCategory = categoryService.findCategory(categoryMock.getId());
 
-        assertEquals(category, findCategory);
+        assertEquals(categoryMock, findCategory);
     }
 
     @Test
     void testUpdateCategory()
     {
-        Category category = mock(Category.class);
-        category.setId(1);
-        category.setCategoryName("testName");
+        Category categoryMock = mock(Category.class);
+        categoryMock.setId(1);
+        categoryMock.setCategoryName("testName");
 
-        UpdateCategoryRequestDto updateCategoryRequestDto = mock(UpdateCategoryRequestDto.class);
-        updateCategoryRequestDto.setCategoryName("updateTestName");
+        UpdateCategoryRequestDto updateCategoryRequestDtoMock = mock(UpdateCategoryRequestDto.class);
+        updateCategoryRequestDtoMock.setCategoryName("updateTestName");
 
-        when(categoryRepository.findById(category.getId())).thenReturn(Optional.of(category));
+        when(categoryRepository.findById(categoryMock.getId())).thenReturn(Optional.of(categoryMock));
 
-        String updateCategory = categoryService.updateCategory(updateCategoryRequestDto);
+        String updateCategory = categoryService.updateCategory(updateCategoryRequestDtoMock);
         String updateCategoryMessage = "Değişiklik Başarıyla Gerçekleştirildi.";
 
         assertEquals(updateCategory, updateCategoryMessage);
@@ -81,12 +81,12 @@ class CategoryServiceTest {
     @Test
     void testDeleteCategoryById()
     {
-        Category category = mock(Category.class);
-        category.setId(1);
+        Category categoryMock = mock(Category.class);
+        categoryMock.setId(1);
 
-        when(categoryRepository.findById(category.getId())).thenReturn(Optional.of(category));
+        when(categoryRepository.findById(categoryMock.getId())).thenReturn(Optional.of(categoryMock));
 
-        String deleteCategory = categoryService.deleteCategoryById(category.getId());
+        String deleteCategory = categoryService.deleteCategoryById(categoryMock.getId());
         String deleteCategoryMessage = "Silme İşlemi Başarıyla Gerçekleştirildi.";
 
         assertEquals(deleteCategory, deleteCategoryMessage);
