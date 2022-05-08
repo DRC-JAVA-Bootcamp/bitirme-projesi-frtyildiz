@@ -28,11 +28,9 @@ class AuthorServiceTest {
     ModelMapper modelMapper;
 
     @Test
-    void findAuthorById() {
+    void testFindAuthorById() {
         Author author = mock(Author.class);
         author.setId(1);
-        author.setName("Test");
-        author.setLastname("Test");
 
         when(authorRepository.findById(author.getId())).thenReturn(Optional.of(author));
         Author deleteAuthor = authorService.findAuthorById(author.getId());
