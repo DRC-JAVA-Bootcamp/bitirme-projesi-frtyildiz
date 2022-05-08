@@ -63,7 +63,6 @@ public class BookService {
         book.setFormat(formatRequest);
         book.setCategory(category);
 
-
         List<Book> bookList = new ArrayList<>();
         bookList.add(book);
         category.setBooks(bookList);
