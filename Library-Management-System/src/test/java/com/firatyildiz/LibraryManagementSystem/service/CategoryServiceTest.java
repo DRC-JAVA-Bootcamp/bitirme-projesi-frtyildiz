@@ -84,6 +84,11 @@ class CategoryServiceTest {
         Category category = mock(Category.class);
         category.setId(1);
 
+        when(categoryRepository.findById(category.getId())).thenReturn(Optional.of(category));
 
+        String deleteCategory = categoryService.deleteCategoryById(category.getId());
+        String deleteCategoryMessage = "Silme İşlemi Başarıyla Gerçekleştirildi.";
+
+        assertEquals(deleteCategory, deleteCategoryMessage);
     }
 }
