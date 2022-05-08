@@ -32,7 +32,8 @@ class AuthorServiceTest {
     ModelMapper modelMapper;
 
     @Test
-    void testFindAuthorById() {
+    void testFindAuthorById()
+    {
         Author author = mock(Author.class);
         author.setId(1);
 
@@ -43,7 +44,8 @@ class AuthorServiceTest {
     }
 
     @Test
-    void testDeleteAuthorById() {
+    void testDeleteAuthorById()
+    {
         Author author = mock(Author.class);
         author.setId(1);
 

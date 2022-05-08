@@ -68,7 +68,7 @@
       <recent name="com.firatyildiz.LibraryManagementSystem.service" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AuthorServiceTest">
+  <component name="RunManager" selected="JUnit.BookServiceTest.testFindBook">
     <configuration name="AuthorServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Library-Management-System" />
       <extension name="coverage">
@@ -95,22 +95,6 @@
       <option name="PACKAGE_NAME" value="com.firatyildiz.LibraryManagementSystem.service" />
       <option name="MAIN_CLASS_NAME" value="com.firatyildiz.LibraryManagementSystem.service.AuthorServiceTest" />
       <option name="METHOD_NAME" value="testDeleteAuthorById" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AuthorServiceTest.testFindAuthorById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Library-Management-System" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.firatyildiz.LibraryManagementSystem.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.firatyildiz.LibraryManagementSystem.service" />
-      <option name="MAIN_CLASS_NAME" value="com.firatyildiz.LibraryManagementSystem.service.AuthorServiceTest" />
-      <option name="METHOD_NAME" value="testFindAuthorById" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -148,13 +132,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BookServiceTest.testFindBook" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Library-Management-System" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.firatyildiz.LibraryManagementSystem.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.firatyildiz.LibraryManagementSystem.service" />
+      <option name="MAIN_CLASS_NAME" value="com.firatyildiz.LibraryManagementSystem.service.BookServiceTest" />
+      <option name="METHOD_NAME" value="testFindBook" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BookServiceTest.testFindBook" />
         <item itemvalue="JUnit.AuthorServiceTest" />
         <item itemvalue="JUnit.AuthorServiceTest.testUpdateAuthor" />
         <item itemvalue="JUnit.AuthorServiceTest.testSaveAuthor" />
         <item itemvalue="JUnit.AuthorServiceTest.testDeleteAuthorById" />
-        <item itemvalue="JUnit.AuthorServiceTest.testFindAuthorById" />
       </list>
     </recent_temporary>
   </component>
