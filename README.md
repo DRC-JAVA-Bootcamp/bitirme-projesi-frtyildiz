@@ -44,6 +44,7 @@ git clone https://github.com/DRC-JAVA-Bootcamp/bitirme-projesi-frtyildiz.git
 <img src="https://github.com/DRC-JAVA-Bootcamp/bitirme-projesi-frtyildiz/blob/main/images/7.png">
 <img src="https://github.com/DRC-JAVA-Bootcamp/bitirme-projesi-frtyildiz/blob/main/images/8.png">
 
-
+## License
+MIT
 
 
