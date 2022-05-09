@@ -38,7 +38,7 @@ public class Book {
     private int page;
 
     @Column(name = "Explanation", length = 1000)
-    private String explanation;
+    private String description;
 
     @Column(name = "PublicationDate")
     private LocalDate publicationDate;

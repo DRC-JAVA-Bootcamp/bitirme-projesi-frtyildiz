@@ -19,7 +19,7 @@ public class SaveBookRequestDto {
 
     private int page;
 
-    private String explanation;
+    private String description;
 
     private LocalDate publicationDate;
 

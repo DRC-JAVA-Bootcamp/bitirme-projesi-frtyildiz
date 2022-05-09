@@ -42,7 +42,7 @@ public class BookService {
         String publisherRequest = saveBookRequestDto.getPublisher();
         String languageRequest = saveBookRequestDto.getLanguage();
         int pageRequest = saveBookRequestDto.getPage();
-        String explanationRequest = saveBookRequestDto.getExplanation();
+        String descriptionRequest = saveBookRequestDto.getDescription();
         LocalDate publicationDateRequest = saveBookRequestDto.getPublicationDate();
         String formatRequest = saveBookRequestDto.getFormat();
         int categoryIdRequest = saveBookRequestDto.getCategoryId();
@@ -58,7 +58,7 @@ public class BookService {
         book.setPublisher(publisherRequest);
         book.setLanguage(languageRequest);
         book.setPage(pageRequest);
-        book.setExplanation(explanationRequest);
+        book.setDescription(descriptionRequest);
         book.setPublicationDate(publicationDateRequest);
         book.setFormat(formatRequest);
         book.setCategory(category);
@@ -99,7 +99,7 @@ public class BookService {
         String publisherRequest = updateBookRequestDto.getPublisher();
         String languageRequest = updateBookRequestDto.getLanguage();
         int pageRequest = updateBookRequestDto.getPage();
-        String explanationRequest = updateBookRequestDto.getExplanation();
+        String descriptionRequest = updateBookRequestDto.getDescription();
         LocalDate publicationDateRequest = updateBookRequestDto.getPublicationDate();
         String formatRequest = updateBookRequestDto.getFormat();
         int categoryIdRequest = updateBookRequestDto.getCategoryId();
@@ -115,7 +115,7 @@ public class BookService {
         book.setPublisher(publisherRequest);
         book.setLanguage(languageRequest);
         book.setPage(pageRequest);
-        book.setExplanation(explanationRequest);
+        book.setDescription(descriptionRequest);
         book.setPublicationDate(publicationDateRequest);
         book.setFormat(formatRequest);
         book.setCategory(category);
