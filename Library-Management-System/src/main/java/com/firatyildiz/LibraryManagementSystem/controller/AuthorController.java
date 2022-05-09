@@ -24,11 +24,6 @@ public class AuthorController {
     {
         String authorSaveDescription = authorService.saveAuthor(saveAuthorRequestDto);
         return new ResponseEntity<>(authorSaveDescription, HttpStatus.OK);
-
-        /*
-            "name":"John",
-            "lastname":"Fowles"
-         */
     }
 
     @GetMapping("/findAuthorById")
@@ -58,6 +53,4 @@ public class AuthorController {
         String deleteAuthorDescription = authorService.deleteAuthorById(authorId);
         return new ResponseEntity<>(deleteAuthorDescription, HttpStatus.OK);
     }
-
-
 }
