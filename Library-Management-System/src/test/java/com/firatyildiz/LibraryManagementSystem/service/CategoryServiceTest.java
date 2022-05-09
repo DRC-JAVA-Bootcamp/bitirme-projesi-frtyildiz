@@ -43,7 +43,7 @@ class CategoryServiceTest {
         when(categoryRepository.save(categoryMock)).thenReturn(categoryMock);
 
         String saveCategory = categoryService.saveCategory(saveCategoryRequestDtoMock);
-        String saveCategoryMessage = categoryMock.getCategoryName() + " Kategorisi Başarıyla Oluşturuldu.";
+        String saveCategoryMessage = categoryMock.getCategoryName() + " Has Been Successfully Created.";
 
         assertEquals(saveCategory, saveCategoryMessage);
     }
@@ -73,7 +73,7 @@ class CategoryServiceTest {
         when(categoryRepository.findById(categoryMock.getId())).thenReturn(Optional.of(categoryMock));
 
         String updateCategory = categoryService.updateCategory(updateCategoryRequestDtoMock);
-        String updateCategoryMessage = "Değişiklik Başarıyla Gerçekleştirildi.";
+        String updateCategoryMessage = "Change Saved Successfully.";
 
         assertEquals(updateCategory, updateCategoryMessage);
     }
@@ -87,7 +87,7 @@ class CategoryServiceTest {
         when(categoryRepository.findById(categoryMock.getId())).thenReturn(Optional.of(categoryMock));
 
         String deleteCategory = categoryService.deleteCategoryById(categoryMock.getId());
-        String deleteCategoryMessage = "Silme İşlemi Başarıyla Gerçekleştirildi.";
+        String deleteCategoryMessage = "The Category Deleted.";
 
         assertEquals(deleteCategory, deleteCategoryMessage);
     }

@@ -27,7 +27,7 @@ public class CategoryService {
 
         category = categoryRepository.save(category);
 
-        return category.getCategoryName() + " Kategorisi Başarıyla Oluşturuldu.";
+        return category.getCategoryName() + " Has Been Successfully Created.";
     }
 
     public Category findCategory(Integer categoryId)
@@ -47,7 +47,7 @@ public class CategoryService {
 
         categoryRepository.save(category);
 
-        return "Değişiklik Başarıyla Gerçekleştirildi.";
+        return "Change Saved Successfully.";
     }
 
 
@@ -55,7 +55,7 @@ public class CategoryService {
     {
         Category category = categoryRepository.findById(categoryId).get();
         categoryRepository.delete(category);
-        return "Silme İşlemi Başarıyla Gerçekleştirildi.";
+        return "The Category Deleted.";
     }
 
     public List<CategoryResponseDto> findAllCategory()

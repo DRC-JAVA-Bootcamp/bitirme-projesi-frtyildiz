@@ -61,7 +61,7 @@ class BookServiceTest {
 
         when(bookRepository.findById(bookMock.getId())).thenReturn(Optional.of(bookMock));
         String deleteBook = bookService.deleteBookById(bookMock.getId());
-        String deleteBookMessage = "Silme İşlemi Başarıyla Gerçekleştirildi.";
+        String deleteBookMessage = "The Book Deleted.";
 
         assertEquals(deleteBook, deleteBookMessage);
     }

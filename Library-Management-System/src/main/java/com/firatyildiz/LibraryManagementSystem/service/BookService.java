@@ -70,7 +70,7 @@ public class BookService {
 
         bookRepository.save(book);
 
-        return book.getTitle() + " Kitabı Sisteme Başarıyla Eklendi.";
+        return book.getTitle() + " Has Been Successfully Created.";
     }
 
     public List<BookResponseDto> findAllBook() {
@@ -122,13 +122,13 @@ public class BookService {
 
         bookRepository.save(book);
 
-        return "Değişiklikler Başarıyla Gerçekleştirildi.";
+        return "Changes Saved Successfully.";
     }
 
     public String deleteBookById(Integer bookId)
     {
         Book book = bookRepository.findById(bookId).get();
         bookRepository.delete(book);
-        return "Silme İşlemi Başarıyla Gerçekleştirildi.";
+        return "The Book Deleted.";
     }
 }

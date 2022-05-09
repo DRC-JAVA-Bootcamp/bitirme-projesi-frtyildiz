@@ -28,7 +28,7 @@ public class AuthorService {
 
         author = authorRepository.save(author);
 
-        return author.getName() + " " + author.getLastname() + " İsimli Yazar Başarıyla Oluşturuldu.";
+        return author.getName() + " " + author.getLastname() + " Has Been Created Successfully.";
     }
 
     public Author findAuthorById(Integer authorId)
@@ -51,14 +51,14 @@ public class AuthorService {
 
         authorRepository.save(author);
 
-        return "Değişiklikler Başarıyla Gerçekleştirildi.";
+        return "Changes Saved Successfully.";
     }
 
     public String deleteAuthorById(Integer authorId)
     {
         Author author = authorRepository.findById(authorId).get();
         authorRepository.delete(author);
-        return "Silme İşlemi Başarıyla Gerçekleştirildi.";
+        return "The Author Deleted.";
     }
 
     public List<AuthorResponseDto> findAllAuthor()

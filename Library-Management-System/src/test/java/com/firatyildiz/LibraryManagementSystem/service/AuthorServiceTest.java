@@ -51,7 +51,7 @@ class AuthorServiceTest {
 
         when(authorRepository.findById(authorMock.getId())).thenReturn(Optional.of(authorMock));
         String deleteAuthor = authorService.deleteAuthorById(authorMock.getId());
-        String deleteMessage = "Silme İşlemi Başarıyla Gerçekleştirildi.";
+        String deleteMessage = "The Author Deleted.";
 
         assertEquals(deleteMessage, deleteAuthor);
     }
@@ -69,7 +69,7 @@ class AuthorServiceTest {
         when(modelMapper.map(saveAuthorRequestDtoMock, Author.class)).thenReturn(authorMock);
         when(authorRepository.save(authorMock)).thenReturn(authorMock);
         String saveAuthor = authorService.saveAuthor(saveAuthorRequestDtoMock);
-        String saveAuthorMessage = authorMock.getName() + " " + authorMock.getLastname() + " İsimli Yazar Başarıyla Oluşturuldu.";
+        String saveAuthorMessage = authorMock.getName() + " " + authorMock.getLastname() + " Has Been Created Successfully.";
 
         assertEquals(saveAuthorMessage, saveAuthor);
     }
@@ -89,7 +89,7 @@ class AuthorServiceTest {
         when(authorRepository.findById(authorMock.getId())).thenReturn(Optional.of(authorMock));
 
         String updateAuthor = authorService.updateAuthor(updateAuthorRequestDtoMock);
-        String updateAuthorMessage = "Değişiklikler Başarıyla Gerçekleştirildi.";
+        String updateAuthorMessage = "Changes Saved Successfully.";
 
         assertEquals(updateAuthorMessage, updateAuthor);
     }
