@@ -24,10 +24,6 @@ public class CategoryController {
     {
         String categorySaveDescription = categoryService.saveCategory(saveCategoryRequestDto);
         return new ResponseEntity<>(categorySaveDescription, HttpStatus.OK);
-
-        /*
-            "categoryName":"Modern Klasikler"
-         */
     }
 
     @GetMapping("/findCategoryById")
@@ -57,5 +53,4 @@ public class CategoryController {
         String deleteCategoryDescription = categoryService.deleteCategoryById(categoryId);
         return new ResponseEntity<>(deleteCategoryDescription, HttpStatus.OK);
     }
-
 }
