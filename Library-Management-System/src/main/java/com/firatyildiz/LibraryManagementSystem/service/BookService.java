@@ -66,16 +66,11 @@ public class BookService {
         List<Book> bookList = new ArrayList<>();
         bookList.add(book);
         category.setBooks(bookList);
-
         author.setBooks(bookList);
-
-        //category.setBook(book);
-        //author.setBook(book);
 
         bookRepository.save(book);
 
         return book.getTitle() + " Kitabı Sisteme Başarıyla Eklendi.";
-//        return book.getAuthor() + " Yazarına Ait " + book.getTitle() + " Kitabı Sisteme Başarıyla Eklendi.";
     }
 
     public List<BookResponseDto> findAllBook() {
@@ -94,7 +89,6 @@ public class BookService {
     public Book findBook(Integer bookId) {
         return bookRepository.findById(bookId).get();
     }
-
 
     public String updateBook(UpdateBookRequestDto updateBookRequestDto)
     {
@@ -126,9 +120,6 @@ public class BookService {
         book.setFormat(formatRequest);
         book.setCategory(category);
 
-        //category.setBook(book);
-        //author.setBook(book);
-
         bookRepository.save(book);
 
         return "Değişiklikler Başarıyla Gerçekleştirildi.";
@@ -140,8 +131,4 @@ public class BookService {
         bookRepository.delete(book);
         return "Silme İşlemi Başarıyla Gerçekleştirildi.";
     }
-
-
-
-
 }
