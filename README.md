@@ -1,6 +1,6 @@
 # Library Management System
 
-With the graduation project of DRC Java Bootcamp which is a library management system, you can perform the necessary operations in the library system. The project was created in such a way that a category and an author can have more than one book (for uml diagram of the project: images/LibraryManagementSystem.png). You can add, update, search and list each of them.
+With the graduation project of DRC Java Bootcamp (Kodla, Kariyerine Başla Java Bootcamp) which is a library management system, you can perform the necessary operations in the library system. The project was created in such a way that a category and an author can have more than one book (for uml diagram of the project: images/LibraryManagementSystem.png). You can add, update, search and list each of them.
 
 ## Requirements
 
