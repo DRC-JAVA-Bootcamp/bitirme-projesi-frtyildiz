@@ -1,10 +1,8 @@
 package com.firatyildiz.LibraryManagementSystem.dto.requestDto;
 
-import com.firatyildiz.LibraryManagementSystem.entity.Author;
 import lombok.Data;
 
 import java.time.LocalDate;
-import java.util.List;
 
 @Data
 public class SaveBookRequestDto {
