@@ -3,12 +3,11 @@ package com.firatyildiz.LibraryManagementSystem.dto.requestDto;
 import lombok.Data;
 
 import java.time.LocalDate;
-import java.util.List;
 
 @Data
 public class UpdateBookRequestDto {
 
-    private int id; //
+    private int id;
 
     private long isbn;
 
