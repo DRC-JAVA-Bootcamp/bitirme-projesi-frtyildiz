@@ -4,15 +4,11 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name = "Book")
 @Data
 public class Book {
-
-    // localhost:8098/h2-console
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -49,5 +45,4 @@ public class Book {
 
     @Column(name = "Format", length = 25)
     private String format;
-
 }
