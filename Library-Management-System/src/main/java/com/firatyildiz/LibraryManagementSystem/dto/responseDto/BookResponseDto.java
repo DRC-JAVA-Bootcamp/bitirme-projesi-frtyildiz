@@ -1,10 +1,8 @@
 package com.firatyildiz.LibraryManagementSystem.dto.responseDto;
 
-import com.firatyildiz.LibraryManagementSystem.entity.Author;
 import lombok.Data;
 
 import java.time.LocalDate;
-import java.util.List;
 
 @Data
 public class BookResponseDto {
@@ -28,5 +26,4 @@ public class BookResponseDto {
     private String format;
 
     private int categoryId;
-
 }
